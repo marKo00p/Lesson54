@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>New item</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/}" th:object="${items}">
+    <label for="name">Enter item name:</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:darkred" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+    <br/>
+    <label for="description">Enter item description</label>
+    <input type="text" th:field="*{description}" id="description"/>
+    <div style="color:darkred" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</div>
+    <br/>
+    <label for="price">Enter item price</label>
+    <input type="text" th:field="*{price}" id="price"/>
+    <div style="color:darkred" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</div>
+    <br/>
+    <input type="submit" value="create!"/>
+</form>
+
+</body>
+</html>

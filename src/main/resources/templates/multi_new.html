@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multi new</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/}" th:object="${items}">
+  <label for="name1">Enter first item name:</label>
+  <input type="text" th:field="*{name}" id="name1"/>
+  <div style="color:darkred" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+  <br/>
+  <label for="description1">Enter first item description</label>
+  <input type="text" th:field="*{description}" id="description1"/>
+  <div style="color:darkred" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</div>
+  <br/>
+  <label for="price1">Enter first item price</label>
+  <input type="text" th:field="*{price}" id="price1"/>
+  <div style="color:darkred" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</div>
+  <br/>
+
+<!--</form>-->
+
+  <hr/>
+  <div th:object="${items}">
+<!--<form th:method="POST" th:action="@{/}" th:object="${items}">-->
+  <label for="name2">Enter second item name:</label>
+  <input type="text" th:field="*{name}" id="name2"/>
+  <div style="color:darkred" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+  <br/>
+  <label for="description2">Enter second item description</label>
+  <input type="text" th:field="*{description}" id="description2"/>
+  <div style="color:darkred" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</div>
+  <br/>
+  <label for="price2">Enter second item price</label>
+  <input type="text" th:field="*{price}" id="price2"/>
+  <div style="color:darkred" th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</div>
+  <br/>
+  <hr/>
+  </div>
+  <input type="submit" value="create couple items at once!"/>
+</form>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+   $( function () {
+    // jQuery scripts here!
+  });
+</script>
+</html>
